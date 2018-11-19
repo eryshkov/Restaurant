@@ -18,6 +18,7 @@
 		5CBC51D921A3277100E0418B /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBC51D821A3277100E0418B /* MenuItem.swift */; };
 		5CBC51DB21A328C400E0418B /* MenuItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBC51DA21A328C400E0418B /* MenuItems.swift */; };
 		5CBC51DD21A3292300E0418B /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBC51DC21A3292300E0418B /* Categories.swift */; };
+		5CBC51DF21A32BD900E0418B /* PreparationTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBC51DE21A32BD900E0418B /* PreparationTime.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		5CBC51D821A3277100E0418B /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		5CBC51DA21A328C400E0418B /* MenuItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItems.swift; sourceTree = "<group>"; };
 		5CBC51DC21A3292300E0418B /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
+		5CBC51DE21A32BD900E0418B /* PreparationTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreparationTime.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				5CBC51D821A3277100E0418B /* MenuItem.swift */,
 				5CBC51DA21A328C400E0418B /* MenuItems.swift */,
 				5CBC51DC21A3292300E0418B /* Categories.swift */,
+				5CBC51DE21A32BD900E0418B /* PreparationTime.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 				5C83B1AB21A2DFAF00DEE841 /* AppDelegate.swift in Sources */,
 				5CBC51D921A3277100E0418B /* MenuItem.swift in Sources */,
 				5CBC51DB21A328C400E0418B /* MenuItems.swift in Sources */,
+				5CBC51DF21A32BD900E0418B /* PreparationTime.swift in Sources */,
 				5CBC51D121A3220500E0418B /* CategoryTableViewController.swift in Sources */,
 				5CBC51D321A3225500E0418B /* MenuTableViewController.swift in Sources */,
 			);
