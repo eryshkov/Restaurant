@@ -88,7 +88,7 @@
             </objects>
             <point key="canvasLocation" x="3129" y="-442"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Your Order-->
         <scene sceneID="hQB-le-DZD">
             <objects>
                 <tableViewController id="j4O-1b-HPy" customClass="OrderTableViewController" customModule="Restaurant" customModuleProvider="target" sceneMemberID="viewController">
@@ -111,7 +111,7 @@
                             <outlet property="delegate" destination="j4O-1b-HPy" id="rRi-76-tau"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="abQ-od-CYh"/>
+                    <navigationItem key="navigationItem" title="Your Order" id="abQ-od-CYh"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6R5-xR-usP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
