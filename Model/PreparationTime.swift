@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct PreparationTime {
+struct PreparationTime: Codable {
     let prepTime: Int
     
     enum CodingKeys: String, CodingKey {
