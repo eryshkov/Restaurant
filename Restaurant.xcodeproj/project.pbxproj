@@ -12,6 +12,9 @@
 		5C83B1B221A2DFB000DEE841 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C83B1B121A2DFB000DEE841 /* Assets.xcassets */; };
 		5C83B1B521A2DFB000DEE841 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C83B1B321A2DFB000DEE841 /* LaunchScreen.storyboard */; };
 		5CBC51D121A3220500E0418B /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBC51D021A3220500E0418B /* CategoryTableViewController.swift */; };
+		5CBC51D321A3225500E0418B /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBC51D221A3225500E0418B /* MenuTableViewController.swift */; };
+		5CBC51D521A3227400E0418B /* OrderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBC51D421A3227400E0418B /* OrderTableViewController.swift */; };
+		5CBC51D721A3252300E0418B /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBC51D621A3252300E0418B /* ItemDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		5C83B1B421A2DFB000DEE841 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5C83B1B621A2DFB000DEE841 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5CBC51D021A3220500E0418B /* CategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
+		5CBC51D221A3225500E0418B /* MenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
+		5CBC51D421A3227400E0418B /* OrderTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewController.swift; sourceTree = "<group>"; };
+		5CBC51D621A3252300E0418B /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,7 +49,7 @@
 				5C83B1B621A2DFB000DEE841 /* Info.plist */,
 				5CBC51CE21A321C100E0418B /* Model */,
 				5C83B1A921A2DFAF00DEE841 /* View */,
-				5CBC51CF21A321CB00E0418B /* Controller */,
+				5CBC51CF21A321CB00E0418B /* View Controllers */,
 				5C83B1A821A2DFAF00DEE841 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -72,12 +78,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		5CBC51CF21A321CB00E0418B /* Controller */ = {
+		5CBC51CF21A321CB00E0418B /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				5CBC51D021A3220500E0418B /* CategoryTableViewController.swift */,
+				5CBC51D621A3252300E0418B /* ItemDetailViewController.swift */,
+				5CBC51D221A3225500E0418B /* MenuTableViewController.swift */,
+				5CBC51D421A3227400E0418B /* OrderTableViewController.swift */,
 			);
-			path = Controller;
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,8 +160,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CBC51D721A3252300E0418B /* ItemDetailViewController.swift in Sources */,
+				5CBC51D521A3227400E0418B /* OrderTableViewController.swift in Sources */,
 				5C83B1AB21A2DFAF00DEE841 /* AppDelegate.swift in Sources */,
 				5CBC51D121A3220500E0418B /* CategoryTableViewController.swift in Sources */,
+				5CBC51D321A3225500E0418B /* MenuTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
