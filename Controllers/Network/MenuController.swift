@@ -13,6 +13,11 @@ class MenuController {
     
     func fetchCategories(completion: @escaping ([String]?) -> Void) {
         let categoryURL = baseURL.appendingPathComponent("categories")
+        let task = URLSession.shared.dataTask(with: categoryURL) {
+            data, responce, error in
+            //TODO: get categories
+        }
+        task.resume()
     }
     
     func fetchMenuItems(forCategory categoryName: String,
