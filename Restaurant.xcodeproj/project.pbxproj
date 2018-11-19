@@ -20,6 +20,7 @@
 		5CBC51DD21A3292300E0418B /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBC51DC21A3292300E0418B /* Categories.swift */; };
 		5CBC51DF21A32BD900E0418B /* PreparationTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBC51DE21A32BD900E0418B /* PreparationTime.swift */; };
 		5CBC51E121A32C5E00E0418B /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBC51E021A32C5E00E0418B /* Order.swift */; };
+		5CBC51E521A32F2200E0418B /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBC51E421A32F2200E0418B /* MenuController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		5CBC51DC21A3292300E0418B /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
 		5CBC51DE21A32BD900E0418B /* PreparationTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreparationTime.swift; sourceTree = "<group>"; };
 		5CBC51E021A32C5E00E0418B /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		5CBC51E421A32F2200E0418B /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +61,7 @@
 				5C83B1B621A2DFB000DEE841 /* Info.plist */,
 				5CBC51CE21A321C100E0418B /* Model */,
 				5C83B1A921A2DFAF00DEE841 /* View */,
-				5CBC51CF21A321CB00E0418B /* View Controllers */,
+				5CBC51CF21A321CB00E0418B /* Controllers */,
 				5C83B1A821A2DFAF00DEE841 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -93,7 +95,16 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		5CBC51CF21A321CB00E0418B /* View Controllers */ = {
+		5CBC51CF21A321CB00E0418B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5CBC51E321A32F0500E0418B /* Network */,
+				5CBC51E221A32EF000E0418B /* View Controllers */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5CBC51E221A32EF000E0418B /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				5CBC51D021A3220500E0418B /* CategoryTableViewController.swift */,
@@ -102,6 +113,14 @@
 				5CBC51D421A3227400E0418B /* OrderTableViewController.swift */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		5CBC51E321A32F0500E0418B /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				5CBC51E421A32F2200E0418B /* MenuController.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,6 +199,7 @@
 				5CBC51E121A32C5E00E0418B /* Order.swift in Sources */,
 				5CBC51D521A3227400E0418B /* OrderTableViewController.swift in Sources */,
 				5C83B1AB21A2DFAF00DEE841 /* AppDelegate.swift in Sources */,
+				5CBC51E521A32F2200E0418B /* MenuController.swift in Sources */,
 				5CBC51D921A3277100E0418B /* MenuItem.swift in Sources */,
 				5CBC51DB21A328C400E0418B /* MenuItems.swift in Sources */,
 				5CBC51DF21A32BD900E0418B /* PreparationTime.swift in Sources */,
