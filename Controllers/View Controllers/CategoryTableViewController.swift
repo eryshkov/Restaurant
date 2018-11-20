@@ -17,8 +17,8 @@ class CategoryTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        menuController.fetchCategories { [unowned self] categories in
-            if let categories = categories {
+        menuController.fetchCategories { [unowned self] serverCategories in
+            if let categories = serverCategories {
                 self.updateUI(with: categories)
             }
         }
@@ -56,7 +56,7 @@ class CategoryTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.categorySelected = categories[indexPath.row]
+        
     }
     /*
     // Override to support conditional editing of the table view.
@@ -107,7 +107,14 @@ class CategoryTableViewController: UITableViewController {
             guard let dvc = segue.destination as? MenuTableViewController else {
                 fatalError("Cannot cast DVC at \(#function) \(#file) line \(#line)")
             }
+            
+            guard let indexSelection = tableView.indexPathForSelectedRow?.row else {
+                fatalError("Cannot find indexPathForSelectedRow at \(#function) \(#file) line \(#line)")
+            }
+            
+            self.categorySelected = categories[indexSelection]
             dvc.categorySelected = self.categorySelected
+//            print("Send \(self.categorySelected)")
         default:
             fatalError("default segue ID at \(#function) \(#file) line \(#line)")
         }
