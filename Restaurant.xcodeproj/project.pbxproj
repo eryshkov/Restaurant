@@ -108,8 +108,8 @@
 			isa = PBXGroup;
 			children = (
 				5CBC51D021A3220500E0418B /* CategoryTableViewController.swift */,
-				5CBC51D621A3252300E0418B /* ItemDetailViewController.swift */,
 				5CBC51D221A3225500E0418B /* MenuTableViewController.swift */,
+				5CBC51D621A3252300E0418B /* ItemDetailViewController.swift */,
 				5CBC51D421A3227400E0418B /* OrderTableViewController.swift */,
 			);
 			path = "View Controllers";

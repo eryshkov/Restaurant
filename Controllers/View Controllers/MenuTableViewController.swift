@@ -10,6 +10,9 @@ import UIKit
 
 class MenuTableViewController: UITableViewController {
 
+    var categorySelected: String?
+    var menuItems: [MenuItem]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,23 +27,23 @@ class MenuTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return menuItems?.count ?? 0
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell", for: indexPath)
 
-        // Configure the cell...
+        cell.textLabel?.text = menuItems?[indexPath.row].name
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

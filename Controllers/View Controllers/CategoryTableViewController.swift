@@ -12,6 +12,7 @@ class CategoryTableViewController: UITableViewController {
     
     let menuController = MenuController()
     var categories = [String]()
+    var categorySelected: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +55,9 @@ class CategoryTableViewController: UITableViewController {
         return cell
     }
     
-
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.categorySelected = categories[indexPath.row]
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -90,14 +93,26 @@ class CategoryTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        guard let segueID = segue.identifier else {
+            fatalError("Undefined segue ID at \(#function) \(#file) line \(#line)")
+        }
+        
+        switch segueID {
+        case "MenuSegue":
+            guard let dvc = segue.destination as? MenuTableViewController else {
+                fatalError("Cannot cast DVC at \(#function) \(#file) line \(#line)")
+            }
+            dvc.categorySelected = self.categorySelected
+        default:
+            fatalError("default segue ID at \(#function) \(#file) line \(#line)")
+        }
+        
     }
-    */
+    
 
 }
