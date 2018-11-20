@@ -12,6 +12,20 @@ import UIKit
 class MenuController {
     let baseURL = URL(string: "http://api.armenu.net:8090/")!
     
+    func replaceHost(at url:URL) -> URL {
+        guard var urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: true) else {
+            fatalError("Unable to change host at \(#function) \(#file) line \(#line)")
+        }
+        
+        urlComponents.host = baseURL.host
+        
+        guard let newURL = urlComponents.url else {
+            fatalError("Unable create new URL at \(#function) \(#file) line \(#line)")
+        }
+        
+        return newURL
+    }
+    
     func fetchCategories(completion:  @escaping ([String]?) -> Void) {
         let categoryURL = baseURL.appendingPathComponent("categories")
         
