@@ -11,7 +11,7 @@ import Foundation
 class MenuController {
     let baseURL = URL(string: "http://api.armenu.net:8090/")!
     
-    func fetchCategories(completion: @escaping ([String]?) -> Void) {
+    func fetchCategories(completion:  @escaping ([String]?) -> Void) {
         let categoryURL = baseURL.appendingPathComponent("categories")
         
         let task = URLSession.shared.dataTask(with: categoryURL) {

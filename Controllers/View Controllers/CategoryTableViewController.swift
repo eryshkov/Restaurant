@@ -16,7 +16,7 @@ class CategoryTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        menuController.fetchCategories { categories in
+        menuController.fetchCategories { [unowned self] categories in
             if let categories = categories {
                 self.updateUI(with: categories)
             }
@@ -25,7 +25,7 @@ class CategoryTableViewController: UITableViewController {
     
     func updateUI(with categories: [String]) {
         self.categories = categories
-        print("\(#function) \(categories)")
+//        print("\(#function) \(categories)")
         
         DispatchQueue.main.async {
             self.tableView.reloadData()
@@ -42,18 +42,18 @@ class CategoryTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return categories.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "categoryCell", for: indexPath)
 
-        // Configure the cell...
+        cell.textLabel?.text = categories[indexPath.row]
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
