@@ -53,8 +53,8 @@ class MenuTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell", for: indexPath)
         
         cell.textLabel?.text = menuItems?[indexPath.row].name
-        let imageURL = menuController.replaceHost(at: menuItems![indexPath.row].imageURL)
         
+        let imageURL = menuController.replaceHost(at: menuItems![indexPath.row].imageURL)
         cell.imageView?.sd_setImage(with: imageURL, placeholderImage: UIImage(named: "image_file.pdf"))
         
         return cell
