@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class MenuController {
     let baseURL = URL(string: "http://api.armenu.net:8090/")!

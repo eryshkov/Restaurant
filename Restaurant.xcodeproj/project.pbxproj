@@ -53,10 +53,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C24E0C921A492F500527343 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		5C83B19E21A2DFAF00DEE841 = {
 			isa = PBXGroup;
 			children = (
 				5C83B1AA21A2DFAF00DEE841 /* AppDelegate.swift */,
+				5C24E0C921A492F500527343 /* Extensions */,
 				5C83B1B121A2DFB000DEE841 /* Assets.xcassets */,
 				5C83B1B621A2DFB000DEE841 /* Info.plist */,
 				5CBC51CE21A321C100E0418B /* Model */,

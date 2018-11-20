@@ -52,6 +52,7 @@ class MenuTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell", for: indexPath)
         
         cell.textLabel?.text = menuItems?[indexPath.row].name
+//        cell.imageView?.image = itemImages?[indexPath.row].image
         
         return cell
     }
