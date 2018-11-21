@@ -18,10 +18,13 @@ class MenuTableViewCell: UITableViewCell {
     
     func update(with menuItem: MenuItem) {
         productImage.sd_setImage(with: menuItem.imageURL, placeholderImage: UIImage(named: "image_file.pdf"))
+        productImage.makeRounded()
         productName.text = menuItem.name
         productPrice.text = "$\(menuItem.price)"
         productDescription.text = menuItem.detailText
     }
+    
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
