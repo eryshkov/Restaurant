@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SDWebImage
+
 
 class MenuTableViewController: UITableViewController {
     
@@ -50,12 +50,11 @@ class MenuTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell", for: indexPath) as? MenuTableViewCell else {
+            fatalError("Cannot cast MenuTableViewCell at \(#function) \(#file) line \(#line)")
+        }
         
-        cell.textLabel?.text = menuItems?[indexPath.row].name
-        
-        let imageURL = menuController.replaceHost(at: menuItems![indexPath.row].imageURL)
-        cell.imageView?.sd_setImage(with: imageURL, placeholderImage: UIImage(named: "image_file.pdf"))
+        cell.update(with: menuItems![indexPath.row])
         
         return cell
     }

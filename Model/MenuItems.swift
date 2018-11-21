@@ -9,5 +9,5 @@
 import Foundation
 
 struct MenuItems: Codable {
-    let items: [MenuItem]
+    var items: [MenuItem]
 }

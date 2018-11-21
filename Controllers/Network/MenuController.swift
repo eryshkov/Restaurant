@@ -74,8 +74,15 @@ class MenuController {
                 completion(nil)
                 return
             }
+
+            var newMenuItems = [MenuItem]()
             
-            completion(menuItems.items)
+            for var item in menuItems.items {
+                item.imageURL = self.replaceHost(at: item.imageURL)
+                newMenuItems.append(item)
+            }
+            
+            completion(newMenuItems)
             
         }
         task.resume()
