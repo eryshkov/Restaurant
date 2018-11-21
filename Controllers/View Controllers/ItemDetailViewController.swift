@@ -11,12 +11,12 @@ import SDWebImage
 
 class ItemDetailViewController: UIViewController {
 
+    @IBOutlet weak var addToOrderButton: UIButton!
     @IBOutlet weak var itemNameLabel: UILabel!
     @IBOutlet weak var itemImageView: UIImageView!
     @IBOutlet weak var itemDescriptionLabel: UILabel!
     @IBOutlet weak var itemPriceLabel: UILabel!
     @IBOutlet weak var itemQuantityLabel: UILabel!
-    @IBOutlet weak var totalPriceLabel: UILabel!
     
     var itemSelected: MenuItem!
     
@@ -39,21 +39,23 @@ class ItemDetailViewController: UIViewController {
     }
 
     func updateView(with menuItem:MenuItem) {
-        navigationItem.title = menuItem.name
         
         itemImageView.sd_setImage(with: menuItem.imageURL, placeholderImage: UIImage(named: "image_file.pdf"))
         itemImageView.makeRounded()
         
         itemNameLabel.text = menuItem.name
         itemDescriptionLabel.text = menuItem.detailText
-        itemPriceLabel.text = "Price $\(menuItem.price)"
+        itemPriceLabel.text = "Price $\(menuItem.price) for one"
         
         updateQuantityAndPrice(with: self.itemQuantity)
+        
+        addToOrderButton.layer.cornerRadius = 5.0
+        addToOrderButton.clipsToBounds = true
     }
     
     func updateQuantityAndPrice(with quantity: Int) {
         itemQuantityLabel.text = "Quantity \(quantity)"
-        totalPriceLabel.text = "Total $\(totalPrice)"
+        navigationItem.title =  "Total $\(totalPrice)"
     }
     
     /*
