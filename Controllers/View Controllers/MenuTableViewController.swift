@@ -11,13 +11,20 @@ import UIKit
 
 class MenuTableViewController: UITableViewController {
     
+    let rowHeight: CGFloat = 44
     let menuController = MenuController()
     var categorySelected: String?
     var menuItems: [MenuItem]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        layoutSetup()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         guard let category = categorySelected else { fatalError("Category not found at \(#function) \(#file) line \(#line)") }
         
         menuController.fetchMenuItems(forCategory: category) { [unowned self] (serverMenuItems) in
@@ -25,6 +32,10 @@ class MenuTableViewController: UITableViewController {
                 self.updateUI(with: menuItems)
             }
         }
+    }
+    
+    func layoutSetup() {
+        tableView.tableFooterView = UIView()
     }
     
     func updateUI(with menuItems: [MenuItem]) {
@@ -59,6 +70,9 @@ class MenuTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return rowHeight
+    }
     
     /*
      // Override to support conditional editing of the table view.

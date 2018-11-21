@@ -16,12 +16,21 @@ class CategoryTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        layoutSetup()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         menuController.fetchCategories { [unowned self] serverCategories in
             if let categories = serverCategories {
                 self.updateUI(with: categories)
             }
         }
+    }
+    
+    func layoutSetup() {
+        tableView.tableFooterView = UIView()
     }
     
     func updateUI(with categories: [String]) {
