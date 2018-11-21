@@ -10,6 +10,14 @@ import UIKit
 
 class ItemDetailViewController: UIViewController {
 
+    @IBOutlet weak var itemName: UILabel!
+    @IBOutlet weak var itemImage: UIImageView!
+    @IBOutlet weak var itemDescr: UILabel!
+    @IBOutlet weak var itemPrice: UILabel!
+    @IBOutlet weak var itemQuantity: UILabel!
+    @IBOutlet weak var totalItems: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,5 +34,15 @@ class ItemDetailViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    // MARK: - IBActions
+    
+    @IBAction func itemQuantityChanged(_ sender: UIStepper) {
+        
+    }
+    
+    @IBAction func addToOrderPressed(_ sender: UIButton) {
+        
+    }
+    
 }
