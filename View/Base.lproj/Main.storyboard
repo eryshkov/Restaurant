@@ -42,7 +42,7 @@
             </objects>
             <point key="canvasLocation" x="1479" y="-442"/>
         </scene>
-        <!--Menu Table View Controller-->
+        <!--Menu Items-->
         <scene sceneID="CWL-wi-mF3">
             <objects>
                 <tableViewController id="ISv-aL-0od" customClass="MenuTableViewController" customModule="Restaurant" customModuleProvider="target" sceneMemberID="viewController">
@@ -115,12 +115,13 @@
                             <outlet property="delegate" destination="ISv-aL-0od" id="drT-lv-5uh"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Menu Items" id="EfP-J9-XGl"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q4i-1j-HJk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2300" y="-442"/>
         </scene>
-        <!--Item Detail View Controller-->
+        <!--Item Detail-->
         <scene sceneID="sfR-Mc-tkO">
             <objects>
                 <viewController id="uRC-LF-7sx" customClass="ItemDetailViewController" customModule="Restaurant" customModuleProvider="target" sceneMemberID="viewController">
@@ -130,6 +131,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="MhR-dJ-hQ3"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Item Detail" id="4wZ-qs-CFW"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2EZ-CT-NLh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

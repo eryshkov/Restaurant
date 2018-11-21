@@ -11,7 +11,7 @@ import UIKit
 
 class MenuTableViewController: UITableViewController {
     
-    let rowHeight: CGFloat = 44
+    let rowHeight: CGFloat = 60
     let menuController = MenuController()
     var categorySelected: String?
     var menuItems: [MenuItem]?
@@ -36,6 +36,8 @@ class MenuTableViewController: UITableViewController {
     
     func layoutSetup() {
         tableView.tableFooterView = UIView()
+        
+        navigationItem.title = categorySelected?.capitalized
     }
     
     func updateUI(with menuItems: [MenuItem]) {
