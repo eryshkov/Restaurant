@@ -106,7 +106,7 @@
                                     <outlet property="productImage" destination="jvE-lx-wVg" id="G0w-BG-Vsv"/>
                                     <outlet property="productName" destination="2Ld-LD-0wi" id="f2T-vk-LCN"/>
                                     <outlet property="productPrice" destination="XX4-X6-Q51" id="Xoq-Sz-zka"/>
-                                    <segue destination="uRC-LF-7sx" kind="show" id="WXe-5a-EZX"/>
+                                    <segue destination="uRC-LF-7sx" kind="show" identifier="ItemDetailSegue" id="WXe-5a-EZX"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -145,10 +145,10 @@
                                             <constraint firstAttribute="width" constant="240" id="blh-LF-ohm"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UTD-H6-kuy">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UTD-H6-kuy">
                                         <rect key="frame" x="77" y="294" width="86" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="price for one" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OIK-5K-Pbw">
@@ -193,18 +193,20 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="fyk-xU-k71" firstAttribute="centerX" secondItem="fTC-o7-0hX" secondAttribute="centerX" id="78a-MS-TFX"/>
+                            <constraint firstItem="fyk-xU-k71" firstAttribute="height" relation="lessThanOrEqual" secondItem="MhR-dJ-hQ3" secondAttribute="height" multiplier="0.9" id="UAL-Ft-gOl"/>
                             <constraint firstItem="fyk-xU-k71" firstAttribute="centerY" secondItem="fTC-o7-0hX" secondAttribute="centerY" id="hlI-CN-25o"/>
+                            <constraint firstItem="fyk-xU-k71" firstAttribute="width" relation="lessThanOrEqual" secondItem="MhR-dJ-hQ3" secondAttribute="width" multiplier="0.9" id="mTZ-wO-yGs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MhR-dJ-hQ3"/>
                     </view>
                     <navigationItem key="navigationItem" title="Item Detail" id="4wZ-qs-CFW"/>
                     <connections>
-                        <outlet property="itemDescr" destination="UTD-H6-kuy" id="T1w-Uo-14q"/>
-                        <outlet property="itemImage" destination="a6W-Uq-qdt" id="cIr-ZH-iZK"/>
-                        <outlet property="itemName" destination="etV-oi-QSZ" id="a0u-Xk-STX"/>
-                        <outlet property="itemPrice" destination="OIK-5K-Pbw" id="0Sy-wD-Rat"/>
-                        <outlet property="itemQuantity" destination="42p-EN-qIm" id="S7z-d6-854"/>
-                        <outlet property="totalItems" destination="VWw-O3-DCa" id="aDa-kA-mdT"/>
+                        <outlet property="itemDescriptionLabel" destination="UTD-H6-kuy" id="T1w-Uo-14q"/>
+                        <outlet property="itemImageView" destination="a6W-Uq-qdt" id="cIr-ZH-iZK"/>
+                        <outlet property="itemNameLabel" destination="etV-oi-QSZ" id="a0u-Xk-STX"/>
+                        <outlet property="itemPriceLabel" destination="OIK-5K-Pbw" id="0Sy-wD-Rat"/>
+                        <outlet property="itemQuantityLabel" destination="42p-EN-qIm" id="S7z-d6-854"/>
+                        <outlet property="totalPriceLabel" destination="VWw-O3-DCa" id="aDa-kA-mdT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2EZ-CT-NLh" userLabel="First Responder" sceneMemberID="firstResponder"/>

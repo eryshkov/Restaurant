@@ -111,14 +111,30 @@ class MenuTableViewController: UITableViewController {
      }
      */
     
-    /*
+    
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
+        guard let segueID = segue.identifier else {
+            fatalError("Undefined segue ID at \(#function) \(#file) line \(#line)")
+        }
+        
+        switch segueID {
+        case "ItemDetailSegue":
+            guard let dvc = segue.destination as? ItemDetailViewController else {
+                fatalError("Cannot cast DVC at \(#function) \(#file) line \(#line)")
+            }
+            
+            guard let indexSelection = tableView.indexPathForSelectedRow?.row else {
+                fatalError("Cannot find indexPathForSelectedRow at \(#function) \(#file) line \(#line)")
+            }
+            
+            dvc.itemSelected = menuItems?[indexSelection]
+        default:
+            fatalError("default segue ID at \(#function) \(#file) line \(#line)")
+        }
      }
-     */
+     
     
 }

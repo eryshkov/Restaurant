@@ -7,16 +7,24 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ItemDetailViewController: UIViewController {
 
-    @IBOutlet weak var itemName: UILabel!
-    @IBOutlet weak var itemImage: UIImageView!
-    @IBOutlet weak var itemDescr: UILabel!
-    @IBOutlet weak var itemPrice: UILabel!
-    @IBOutlet weak var itemQuantity: UILabel!
-    @IBOutlet weak var totalItems: UILabel!
+    @IBOutlet weak var itemNameLabel: UILabel!
+    @IBOutlet weak var itemImageView: UIImageView!
+    @IBOutlet weak var itemDescriptionLabel: UILabel!
+    @IBOutlet weak var itemPriceLabel: UILabel!
+    @IBOutlet weak var itemQuantityLabel: UILabel!
+    @IBOutlet weak var totalPriceLabel: UILabel!
     
+    var itemSelected: MenuItem!
+    
+    var itemQuantity: Int = 1
+    
+    var totalPrice: Double {
+        return itemSelected.price * Double(itemQuantity)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +32,30 @@ class ItemDetailViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        updateView(with: itemSelected)
+    }
 
+    func updateView(with menuItem:MenuItem) {
+        navigationItem.title = menuItem.name
+        
+        itemImageView.sd_setImage(with: menuItem.imageURL, placeholderImage: UIImage(named: "image_file.pdf"))
+        itemImageView.makeRounded()
+        
+        itemNameLabel.text = menuItem.name
+        itemDescriptionLabel.text = menuItem.detailText
+        itemPriceLabel.text = "Price $\(menuItem.price)"
+        
+        updateQuantityAndPrice(with: self.itemQuantity)
+    }
+    
+    func updateQuantityAndPrice(with quantity: Int) {
+        itemQuantityLabel.text = "Quantity \(quantity)"
+        totalPriceLabel.text = "Total $\(totalPrice)"
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -38,7 +69,8 @@ class ItemDetailViewController: UIViewController {
     // MARK: - IBActions
     
     @IBAction func itemQuantityChanged(_ sender: UIStepper) {
-        
+        self.itemQuantity = Int(sender.value)
+        updateQuantityAndPrice(with: self.itemQuantity)
     }
     
     @IBAction func addToOrderPressed(_ sender: UIButton) {

@@ -6,7 +6,6 @@
 //  Copyright © 2018 Evgeniy Ryshkov. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class MenuController {
