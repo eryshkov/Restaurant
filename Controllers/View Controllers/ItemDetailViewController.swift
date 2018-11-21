@@ -41,7 +41,7 @@ class ItemDetailViewController: UIViewController {
     func updateView(with menuItem:MenuItem) {
         
         itemImageView.sd_setImage(with: menuItem.imageURL, placeholderImage: UIImage(named: "image_file.pdf"))
-        itemImageView.makeRounded()
+        itemImageView.makeCornered(with: 20)
         
         itemNameLabel.text = menuItem.name
         itemDescriptionLabel.text = menuItem.detailText
