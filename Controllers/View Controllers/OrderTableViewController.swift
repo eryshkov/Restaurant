@@ -103,9 +103,17 @@ class OrderTableViewController: UITableViewController {
         if order.getOrderPrice() > 0 {
             navigationController?.tabBarItem.badgeValue = "$\(order.getOrderPrice())"
         }else{
-            navigationController?.tabBarItem.badgeValue = ""
+            navigationController?.tabBarItem.badgeValue = nil
         }
         
+    }
+    
+    // MARK: - IBActions
+    
+    @IBAction func trashButtonTapped(_ sender: UIBarButtonItem) {
+        self.order.menuItems.removeAll()
+        updateBadge()
+        tableView.reloadData()
     }
     
 }

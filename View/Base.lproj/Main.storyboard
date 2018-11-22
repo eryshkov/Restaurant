@@ -238,7 +238,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Check Out" id="gMM-ga-0yh">
-                        <barButtonItem key="leftBarButtonItem" systemItem="trash" id="tCH-j5-Xz3"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="trash" id="tCH-j5-Xz3">
+                            <connections>
+                                <action selector="trashButtonTapped:" destination="j4O-1b-HPy" id="AZC-GK-v45"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="9YC-Td-Izm"/>
                     </navigationItem>
                 </tableViewController>
