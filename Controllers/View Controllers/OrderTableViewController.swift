@@ -123,15 +123,24 @@ class OrderTableViewController: UITableViewController {
     
     @IBAction func checkOutButtonTapped(_ sender: UIBarButtonItem) {
        
-        menuController.submitOrder(forMenuIDs: order.getMenuIDs()) {(time) in
+        menuController.submitOrder(forMenuIDs: order.getMenuIDs()) {[unowned self](time) in
             DispatchQueue.main.async {
-                let ac = UIAlertController(title: "Order received", message: "Preparation time \(String(describing: time))", preferredStyle: .alert)
-                let alertAction = UIAlertAction(title: "OK", style: .default, handler: { [unowned self](_) in
-                    self.cleanOrder()
-                })
+                if let prepTime = time {
+                    let ac = UIAlertController(title: "Order received", message: "Preparation time \(prepTime) min", preferredStyle: .alert)
+                    let alertAction = UIAlertAction(title: "OK", style: .default, handler: { [unowned self](_) in
+                        self.cleanOrder()
+                    })
+                    
+                    ac.addAction(alertAction)
+                    self.present(ac, animated: true)
+                }else{
+                    let ac = UIAlertController(title: "Order isn't received", message: "Please try again later", preferredStyle: .alert)
+                    let alertAction = UIAlertAction(title: "OK", style: .default)
+                    
+                    ac.addAction(alertAction)
+                    self.present(ac, animated: true)
+                }
                 
-                ac.addAction(alertAction)
-                self.present(ac, animated: true)
             }
             
         }
