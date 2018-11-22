@@ -1,5 +1,5 @@
 //
-//  PassDataDelegate.swift
+//  OrderPassable.swift
 //  Restaurant
 //
 //  Created by Evgeniy Ryshkov on 22/11/2018.

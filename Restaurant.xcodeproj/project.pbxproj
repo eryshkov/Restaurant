@@ -15,6 +15,7 @@
 		5C92A7BF21A5572E00BA0190 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C92A7BE21A5572E00BA0190 /* MenuTableViewCell.swift */; };
 		5C92A7C121A5711700BA0190 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C92A7C021A5711700BA0190 /* UIImageView.swift */; };
 		5C92A7C921A6E5B500BA0190 /* OrderPassable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C92A7C821A6E5B500BA0190 /* OrderPassable.swift */; };
+		5C92A7CB21A7305F00BA0190 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C92A7CA21A7305F00BA0190 /* Array.swift */; };
 		5CBC51D121A3220500E0418B /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBC51D021A3220500E0418B /* CategoryTableViewController.swift */; };
 		5CBC51D321A3225500E0418B /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBC51D221A3225500E0418B /* MenuTableViewController.swift */; };
 		5CBC51D521A3227400E0418B /* OrderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBC51D421A3227400E0418B /* OrderTableViewController.swift */; };
@@ -38,6 +39,7 @@
 		5C92A7BE21A5572E00BA0190 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		5C92A7C021A5711700BA0190 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		5C92A7C821A6E5B500BA0190 /* OrderPassable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderPassable.swift; sourceTree = "<group>"; };
+		5C92A7CA21A7305F00BA0190 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		5CBC51D021A3220500E0418B /* CategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
 		5CBC51D221A3225500E0418B /* MenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		5CBC51D421A3227400E0418B /* OrderTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 			children = (
 				5C92A7C021A5711700BA0190 /* UIImageView.swift */,
 				5C92A7C821A6E5B500BA0190 /* OrderPassable.swift */,
+				5C92A7CA21A7305F00BA0190 /* Array.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				5C92A7C121A5711700BA0190 /* UIImageView.swift in Sources */,
 				5CBC51E121A32C5E00E0418B /* Order.swift in Sources */,
 				5CBC51D521A3227400E0418B /* OrderTableViewController.swift in Sources */,
+				5C92A7CB21A7305F00BA0190 /* Array.swift in Sources */,
 				5C83B1AB21A2DFAF00DEE841 /* AppDelegate.swift in Sources */,
 				5CBC51E521A32F2200E0418B /* MenuController.swift in Sources */,
 				5CBC51D921A3277100E0418B /* MenuItem.swift in Sources */,

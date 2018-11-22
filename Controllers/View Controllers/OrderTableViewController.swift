@@ -10,8 +10,28 @@ import UIKit
 
 class OrderTableViewController: UITableViewController {
     
+    let rowHeight: CGFloat = 60
     var order = Order()
     let menuController = MenuController()
+    
+//    var orderGroupped: [MenuItem] {
+//        var result = [MenuItem]()
+//
+//        let nonDuplicatedArray = order.menuItems.removingDuplicates()
+//
+//        for var item in nonDuplicatedArray {
+//            var count = 0
+//            for item2 in order.menuItems {
+//                if item2 == item {
+//                    count += 1
+//                }
+//            }
+//            item.detailText = "\(count)"
+//            result.append(item)
+//        }
+//
+//        return result
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,13 +67,19 @@ class OrderTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "OrderCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "OrderCell", for: indexPath) as? MenuTableViewCell else {
+            fatalError("Cannot cast MenuTableViewCell at \(#function) \(#file) line \(#line)")
+        }
         
-        cell.textLabel?.text = order.menuItems[indexPath.row].name
+        cell.update(with: order.menuItems[indexPath.row])
+
         
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return rowHeight
+    }
     
     /*
      // Override to support conditional editing of the table view.
