@@ -18,6 +18,8 @@ class ItemDetailViewController: UIViewController {
     @IBOutlet weak var itemPriceLabel: UILabel!
     @IBOutlet weak var itemQuantityLabel: UILabel!
     
+    var order = Order()
+    weak var orderDelegate: OrderPassable?
     var itemSelected: MenuItem!
     
     var itemQuantity: Int = 1
@@ -29,7 +31,25 @@ class ItemDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        getDelegate()
+    }
+    
+    func getDelegate(){
+        if let controllers = tabBarController?.viewControllers {
+            for controller in controllers {
+                guard let navigationController = controller as? UINavigationController else {
+//                    fatalError("Cannot cast UINavigationController at \(#function) \(#file) line \(#line)")
+                    continue
+                }
+                for viewController in navigationController.viewControllers {
+//                    print(viewController)
+                    if viewController is OrderPassable {
+                        self.orderDelegate = viewController as? OrderPassable
+                        break
+                    }
+                }
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -76,7 +96,13 @@ class ItemDetailViewController: UIViewController {
     }
     
     @IBAction func addToOrderPressed(_ sender: UIButton) {
+        for _ in 1...itemQuantity {
+            order.menuItems.append(itemSelected)
+        }
         
+        orderDelegate?.passData(order)
+        
+        order.menuItems.removeAll()
     }
     
 }

@@ -14,4 +14,14 @@ struct Order: Codable {
     init(menuItems: [MenuItem] = []) {
         self.menuItems = menuItems
     }
+    
+    func getOrderPrice() -> Double {
+        var result: Double = 0
+        
+        for item in menuItems {
+            result += item.price
+        }
+        
+        return result
+    }
 }

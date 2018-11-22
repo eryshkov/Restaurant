@@ -1,5 +1,5 @@
 //
-//  Basket.swift
+//  PassDataDelegate.swift
 //  Restaurant
 //
 //  Created by Evgeniy Ryshkov on 22/11/2018.
@@ -8,12 +8,6 @@
 
 import Foundation
 
-class Basket {
-    static var content = Basket()
-    
-    var items: [MenuItem:Int] = [:]
-    
-    private init () {
-        
-    }
+protocol OrderPassable: class {
+    func passData(_ data: Order)
 }

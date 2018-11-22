@@ -10,37 +10,49 @@ import UIKit
 
 class OrderTableViewController: UITableViewController {
 
+    var order = Order()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        layoutSetup()
+        
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tableView.reloadData()
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
+    func layoutSetup() {
+        tableView.tableFooterView = UIView()
+        
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return order.menuItems.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "OrderCell", for: indexPath)
 
-        // Configure the cell...
+        cell.textLabel?.text = order.menuItems[indexPath.row].name
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -87,4 +99,25 @@ class OrderTableViewController: UITableViewController {
     }
     */
 
+    func updateBadge() {
+        if order.getOrderPrice() > 0 {
+            navigationController?.tabBarItem.badgeValue = "$\(order.getOrderPrice())"
+        }else{
+            navigationController?.tabBarItem.badgeValue = ""
+        }
+        
+    }
+    
+}
+
+extension OrderTableViewController: OrderPassable{
+    
+    func passData(_ data: Order) {
+        
+        for item in data.menuItems {
+            order.menuItems.append(item)
+            
+        }
+        updateBadge()
+    }
 }
