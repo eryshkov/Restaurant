@@ -11,6 +11,7 @@ import UIKit
 class OrderTableViewController: UITableViewController {
 
     var order = Order()
+    let menuController = MenuController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -108,12 +109,34 @@ class OrderTableViewController: UITableViewController {
         
     }
     
-    // MARK: - IBActions
-    
-    @IBAction func trashButtonTapped(_ sender: UIBarButtonItem) {
+    func cleanOrder() {
         self.order.menuItems.removeAll()
         updateBadge()
         tableView.reloadData()
+    }
+    
+    // MARK: - IBActions
+    
+    @IBAction func trashButtonTapped(_ sender: UIBarButtonItem) {
+        cleanOrder()
+    }
+    
+    @IBAction func checkOutButtonTapped(_ sender: UIBarButtonItem) {
+       
+        menuController.submitOrder(forMenuIDs: order.getMenuIDs()) {(time) in
+            DispatchQueue.main.async {
+                let ac = UIAlertController(title: "Order received", message: "Preparation time \(String(describing: time))", preferredStyle: .alert)
+                let alertAction = UIAlertAction(title: "OK", style: .default, handler: { [unowned self](_) in
+                    self.cleanOrder()
+                })
+                
+                ac.addAction(alertAction)
+                self.present(ac, animated: true)
+            }
+            
+        }
+        
+        
     }
     
 }
@@ -126,6 +149,7 @@ extension OrderTableViewController: OrderPassable{
             order.menuItems.append(item)
             
         }
+        
         updateBadge()
     }
 }

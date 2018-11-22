@@ -24,4 +24,14 @@ struct Order: Codable {
         
         return result
     }
+    
+    func getMenuIDs() -> [Int] {
+        var result = [Int]()
+        
+        for item in menuItems {
+            result.append(item.id)
+        }
+        
+        return result
+    }
 }

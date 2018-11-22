@@ -243,7 +243,11 @@
                                 <action selector="trashButtonTapped:" destination="j4O-1b-HPy" id="AZC-GK-v45"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="9YC-Td-Izm"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="9YC-Td-Izm">
+                            <connections>
+                                <action selector="checkOutButtonTapped:" destination="j4O-1b-HPy" id="6S3-7U-6vl"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6R5-xR-usP" userLabel="First Responder" sceneMemberID="firstResponder"/>
