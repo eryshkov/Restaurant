@@ -26,3 +26,18 @@ struct MenuItem: Codable {
     }
     
 }
+
+extension MenuItem: Hashable {
+    var hashValue: Int {
+        return id
+    }
+    
+    static func ==(lhs: MenuItem, rhs: MenuItem) -> Bool {
+        return lhs.id == rhs.id && lhs.name == rhs.name
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+        hasher.combine(name)
+    }
+}
