@@ -214,7 +214,7 @@
             </objects>
             <point key="canvasLocation" x="3129" y="-442"/>
         </scene>
-        <!--Your Order-->
+        <!--Check Out-->
         <scene sceneID="hQB-le-DZD">
             <objects>
                 <tableViewController id="j4O-1b-HPy" customClass="OrderTableViewController" customModule="Restaurant" customModuleProvider="target" sceneMemberID="viewController">
@@ -223,7 +223,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrderCell" id="fEc-iy-3sA">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrderCell" id="fEc-iy-3sA" customClass="MenuTableViewCell" customModule="Restaurant" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fEc-iy-3sA" id="96Y-aI-1Np">
@@ -237,7 +237,10 @@
                             <outlet property="delegate" destination="j4O-1b-HPy" id="rRi-76-tau"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Your Order" id="abQ-od-CYh"/>
+                    <navigationItem key="navigationItem" title="Check Out" id="gMM-ga-0yh">
+                        <barButtonItem key="leftBarButtonItem" systemItem="trash" id="tCH-j5-Xz3"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="9YC-Td-Izm"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6R5-xR-usP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
