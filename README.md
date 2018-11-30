@@ -1,6 +1,8 @@
 # Restaurant
 Restaurant. Final Swift Developer Stage 3 project
 
+<img src="/screens/IMG_0467.jpg" width="19%">    <img src="/screens/IMG_0468.jpg" width="19%">    <img src="/screens/IMG_0469.jpg" width="19%">
+
 [Demo Video Here](https://youtu.be/rYgGmYw52S4)
 
 ## Main functionality
